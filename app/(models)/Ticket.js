@@ -1,6 +1,10 @@
 import mongoose, { Schema } from "mongoose";
+console.log(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
 const ticketSchema = new Schema(
